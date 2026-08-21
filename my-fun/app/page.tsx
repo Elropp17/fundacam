@@ -53,6 +53,10 @@ export default function Home() {
           descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia y un cuidado continuo. Queremos que te sientas completamente cómodo, seguro y protegido en cada paso de tu tratamiento con nosotros.' },
         { id: 'c4', nombre: 'Endocrino', icon: '🦋', doctor: 'Dr. Luis Silva', costo: '$30',
           descripcion: 'El balance de tu cuerpo es fundamental para sentirte en armonía. Te acompañamos con cariño y comprensión para regular tu metabolismo y cuidar de ti integralmente. Aquí no eres un paciente más; eres parte de nuestra comunidad, y brindarte estabilidad física y emocional es siempre nuestra mayor prioridad.' },
+        { id: 'c5', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', 
+          descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar, ofreciéndote un diagnóstico preciso y un plan de acción para que recuperes tu vitalidad diaria.' },
+        { id: 'c6', nombre: 'Oncólogo', icon: '🎗️', doctor: 'Dra. Gabriela Blanco', costo: '$35', 
+          descripcion: 'Enfrentar un diagnóstico difícil requiere de un equipo médico compasivo y altamente capacitado. Te acompañamos en cada etapa de tu tratamiento oncológico con empatía, brindándote el soporte médico y emocional necesario para que nunca te sientas solo en esta batalla.' },
       ]
     },
     {
@@ -62,7 +66,7 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]',
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Ana López', costo: '$25', img: '/pediatra.jpg',
+        { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg',
           descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva y sin miedos. Acompañamos el crecimiento de los más pequeños de la casa, asegurando que su futuro esté lleno de salud, fuerza y alegría.' },
         { id: 'g2', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30',
           descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes junto a tu familia. Sabemos que tus ojos son el reflejo de tu alma, y nosotros estamos aquí para protegerlos con la mejor tecnología.' },
@@ -70,8 +74,8 @@ export default function Home() {
           descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz. Te escuchamos atentamente y con el corazón, para que tú también puedas seguir disfrutando de todas las voces, risas y hermosas melodías que te regala la vida.' },
         { id: 'g4', nombre: 'Urólogo', icon: '💧', doctor: 'Dr. Javier Pineda', costo: '$35', img: '/javier.jpg' ,
           descripcion: 'Abordamos tu salud íntima con el máximo respeto, absoluta confidencialidad y una gran empatía. Sabemos que dar el paso puede generar dudas o temores, por eso te ofrecemos un espacio seguro donde te sentirás en confianza y sin juicios. Tu tranquilidad, tanto física como emocional, es nuestro principal objetivo.' },
-        { id: 'g5', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$8', img: '/andres.jpg',
-          descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de sororidad donde tu salud integral es lo primero. Desde la prevención hasta el tratamiento más delicado, estamos aquí para escucharte, cuidarte, despejar tus dudas y empoderarte en cada etapa.' }, 
+        { id: 'g5', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$9', img: '/andres.jpg',
+          descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de solidaridad donde tu salud integral es lo primero. Desde la prevención hasta el tratamiento más delicado, estamos aquí para escucharte, cuidarte, despejar tus dudas y empoderarte en cada etapa.' }, 
       ]
     },
     {
@@ -85,10 +89,14 @@ export default function Home() {
           descripcion: 'Tu mente y tu sistema nervioso son el centro de todo lo que eres. Comprendemos la complejidad de tus padecimientos y te ofrecemos un apoyo médico firme, pero profundamente compasivo. Caminamos contigo en los momentos de incertidumbre, brindándote la claridad, la esperanza y las respuestas que necesitas.' },
         { id: 'n2', nombre: 'Neuropediatra', icon: '🧒', doctor: 'Dra. Carmen Vivas', costo: '$45',
           descripcion: 'Entendemos profundamente la preocupación de los padres cuando se trata del desarrollo de sus pequeños. Con infinita ternura, paciencia y mucha vocación, evaluamos y guiamos a tus hijos para que alcancen su máximo potencial. Estamos aquí para sostener tu mano y la de ellos en este hermoso viaje de crecimiento.' },
-        { id: 'n3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Miguel Salazar', costo: '$35',
+        { id: 'n3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Ender Pacheco', costo: '$8', img: '/trauma.jpg',
           descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza. Trabajamos con dedicación incansable para aliviar tu dolor y restaurar tu movilidad, garantizando que sigas caminando por la vida sin limitaciones ni miedos.' },
-        { id: 'n4', nombre: 'Ecografista', icon: '📟', doctor: 'Dra. Laura Jiménez', costo: '$20',
+        { id: 'n4', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg',
           descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio, explicándote cada detalle en pantalla para que te sientas tranquilo, informado y seguro. Tu confianza en nosotros es lo que más valoramos.' },
+        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Carlos Giménez', costo: '$15', 
+          descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones. Nuestro objetivo es que vuelvas a realizar tus actividades cotidianas con total libertad, fuerza y confianza.' },
+        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Valeria Díaz', costo: '$20', 
+          descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar, gestionar tus emociones y encontrar las herramientas necesarias para alcanzar la paz mental y el bienestar.' },
       ]
     }
   ];
@@ -117,20 +125,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* CABECERA REDISEÑADA CON LOGO CENTRADO */}
-      <header className="flex flex-col items-center justify-center pt-6 pb-4 px-6 bg-[#050505] shadow-lg sticky top-0 z-40 gap-5 border-b border-gray-900">
-        
-        {/* Logo en el centro */}
+      {/* CABECERA ULTRA COMPACTA */}
+      <header className="flex flex-col items-center justify-center py-3 px-6 bg-[#050505] shadow-md sticky top-0 z-50 gap-2 border-b border-gray-900">
         <div className="flex justify-center w-full">
           <img 
             src="/logo.png" 
             alt="Logo Fundación Caminemos Juntos" 
-            className="h-28 md:h-36 w-auto object-contain drop-shadow-2xl"
+            className="h-16 md:h-20 w-auto object-contain drop-shadow-xl"
           />
         </div>
-
-        {/* Navegación equilibrada debajo del logo */}
-        <nav className="hidden md:flex gap-8 font-semibold text-sm text-gray-300 tracking-wide uppercase">
+        <nav className="hidden md:flex gap-8 font-semibold text-xs text-gray-300 tracking-wider uppercase">
           <a href="#" className="hover:text-pink-500 transition-colors">Qué hacemos</a>
           <a href="#" className="hover:text-blue-400 transition-colors">Especialidades</a>
           <a href="#" className="hover:text-green-400 transition-colors">Novedades</a>
@@ -138,8 +142,45 @@ export default function Home() {
         </nav>
       </header>
 
+      {/* BANNER PRINCIPAL (HERO SECTION) */}
+      <section className="relative w-full h-[40vh] min-h-[350px] flex items-center justify-center overflow-hidden">
+        {/* Asegúrate de tener una imagen llamada banner.jpg en la carpeta public */}
+        <div className="absolute inset-0 bg-gray-900">
+          <img 
+            src="/banner.jpeg" 
+            alt="Atención médica comunitaria" 
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+          />
+        </div>
+        
+        {/* Texto sobre el Banner */}
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-black text-white drop-shadow-xl tracking-tight"
+          >
+            Salud al alcance de todos
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-2xl text-gray-100 font-medium drop-shadow-lg"
+          >
+            Brindamos atención médica solidaria y de calidad para el bienestar y desarrollo integral de las familias.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Contenido Principal (Especialidades) */}
-      <main className="max-w-6xl mx-auto pt-16 pb-8 px-6 flex-grow">
+      <main className="max-w-6xl mx-auto pt-14 pb-12 px-6 flex-grow">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-extrabold text-gray-800 tracking-tight">Nuestras Especialidades Médicas</h3>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-10"
           variants={containerVariants}
