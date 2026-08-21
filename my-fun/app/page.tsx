@@ -6,6 +6,24 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [seleccionada, setSeleccionada] = useState<any>(null);
   const [historiaActual, setHistoriaActual] = useState(0);
+  
+  // ESTADO PARA LA ANIMACIÓN DEL SCROLL
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // EFECTO PARA DETECTAR CUÁNDO EL USUARIO BAJA LA PÁGINA
+  useEffect(() => {
+    const handleScroll = () => {
+      // Si baja más de 50px, activa el modo minimizado
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Historias emotivas de la fundación
   const historias = [
@@ -125,57 +143,85 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* SECCIÓN CABECERA + BANNER FUSIONADOS - REORGANIZADA */}
-      <section className="relative w-full min-h-[40vh] md:min-h-[350px] flex flex-col justify-between overflow-hidden bg-[#050505]">
+      {/* HEADER ANIMADO QUE SE MINIMIZA AL HACER SCROLL */}
+      <motion.header 
+        className="sticky top-0 z-50 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
+        initial={false}
+        animate={{
+          height: isScrolled ? '90px' : '40vh',
+          minHeight: isScrolled ? '90px' : '350px'
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
         
-        {/* Fondo del Banner (Opacidad ajustada para que se vea más natural la foto) */}
+        {/* Fondo del Banner */}
         <div className="absolute inset-0">
           <img 
             src="/banner.jpeg" 
             alt="Atención médica comunitaria" 
             className="w-full h-full object-cover object-center opacity-60"
           />
-          {/* Capa sutil para asegurar que los textos blancos se lean bien sobre la foto */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+          {/* La capa oscura se hace más intensa cuando se minimiza para que el menú resalte mejor */}
+          <div className={`absolute inset-0 bg-gradient-to-b transition-colors duration-500 ${isScrolled ? 'from-black/80 to-black/90' : 'from-black/40 via-black/20 to-black/60'}`}></div>
         </div>
         
-        {/* 1. Logo (Header) flotando arriba, aumentado de tamaño */}
-        <header className="relative z-20 flex justify-center pt-6 pb-2 px-6">
-          <img 
+        {/* 1. Logo */}
+        <motion.div 
+          layout
+          className="relative z-20 flex justify-center w-full"
+          animate={{
+            paddingTop: isScrolled ? '8px' : '24px',
+            paddingBottom: isScrolled ? '0px' : '8px'
+          }}
+        >
+          <motion.img 
+            layout
             src="/logo.png" 
             alt="Logo Fundación Caminemos Juntos" 
-            className="h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
+            className="w-auto object-contain drop-shadow-2xl"
+            animate={{
+              height: isScrolled ? '40px' : '128px' // Se reduce el logo de tamaño 32 a 10
+            }}
+            transition={{ duration: 0.4 }}
           />
-        </header>
+        </motion.div>
 
-        {/* 2. Texto Central del Banner */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-2 py-6 flex-grow">
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] tracking-tight"
-          >
-            Salud al alcance de todos
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base md:text-xl text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
-          >
-            Atención médica solidaria y de calidad para el desarrollo integral de las familias.
-          </motion.p>
-        </div>
+        {/* 2. Texto Central (Aparece/Desaparece con AnimatePresence) */}
+        <AnimatePresence>
+          {!isScrolled && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-2 flex-grow overflow-hidden"
+            >
+              <h2 className="text-3xl md:text-5xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] tracking-tight">
+                Salud al alcance de todos
+              </h2>
+              <p className="text-base md:text-xl text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                Atención médica solidaria y de calidad para el desarrollo integral de las familias.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        {/* 3. Navegación (Movida abajo del texto) */}
-        <nav className="relative z-20 flex flex-wrap justify-center gap-4 md:gap-10 font-bold text-xs md:text-sm text-gray-100 tracking-wider uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] pb-8 px-4">
+        {/* 3. Navegación (Se ajusta al espacio minimizado) */}
+        <motion.nav 
+          layout
+          className="relative z-20 flex flex-wrap justify-center gap-4 md:gap-10 font-bold text-xs md:text-sm text-gray-100 tracking-wider uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] px-4"
+          animate={{
+            paddingBottom: isScrolled ? '12px' : '32px',
+            paddingTop: isScrolled ? '8px' : '0px'
+          }}
+        >
           <a href="#" className="hover:text-pink-400 transition-colors">Qué hacemos</a>
           <a href="#" className="hover:text-blue-300 transition-colors">Especialidades</a>
           <a href="#" className="hover:text-green-400 transition-colors">Novedades</a>
           <a href="#" className="hover:text-blue-300 transition-colors">Contacto</a>
-        </nav>
-      </section>
+        </motion.nav>
+
+      </motion.header>
 
       {/* Contenido Principal (Especialidades) */}
       <main className="max-w-6xl mx-auto pt-14 pb-12 px-6 flex-grow">
