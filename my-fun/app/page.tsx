@@ -30,7 +30,7 @@ export default function Home() {
   const historias = [
     {
       id: 1,
-      imagen: '/imagen1.jpg', 
+      imagen: '/imagen1.jpeg', 
       titulo: 'La Salud de todos nos importa',
       mensaje: 'Cada paso que damos es una huella de amor. Nos acercamos a quienes más lo necesitan para brindar atención médica, escucha activa y una mano amiga cuando las fuerzas flaquean.'
     },
