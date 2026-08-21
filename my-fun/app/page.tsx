@@ -93,9 +93,9 @@ export default function Home() {
           descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza. Trabajamos con dedicación incansable para aliviar tu dolor y restaurar tu movilidad, garantizando que sigas caminando por la vida sin limitaciones ni miedos.' },
         { id: 'n4', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg',
           descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio, explicándote cada detalle en pantalla para que te sientas tranquilo, informado y seguro. Tu confianza en nosotros es lo que más valoramos.' },
-        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. N', costo: '$4', img: '/fisio.jpg',
+        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Carlos Giménez', costo: '$15', 
           descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones. Nuestro objetivo es que vuelvas a realizar tus actividades cotidianas con total libertad, fuerza y confianza.' },
-        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Alexandra Perez', costo: '$8', img: '/psico.jpg',
+        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Valeria Díaz', costo: '$20', 
           descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar, gestionar tus emociones y encontrar las herramientas necesarias para alcanzar la paz mental y el bienestar.' },
       ]
     }
@@ -125,10 +125,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* SECCIÓN CABECERA + BANNER FUSIONADOS */}
-      <section className="relative w-full min-h-[50vh] md:min-h-[450px] flex flex-col overflow-hidden">
+      {/* SECCIÓN CABECERA + BANNER FUSIONADOS - ALTURA REDUCIDA */}
+      <section className="relative w-full min-h-[30vh] md:min-h-[250px] flex flex-col overflow-hidden">
         
-        {/* Fondo del Banner (Ajustado para quitar el tono azulado) */}
+        {/* Fondo del Banner */}
         <div className="absolute inset-0 bg-black">
           <img 
             src="/banner.jpeg" 
@@ -138,12 +138,12 @@ export default function Home() {
         </div>
         
         {/* Cabecera (Logo y Navegación) flotando sobre el banner */}
-        <header className="relative z-50 flex flex-col items-center justify-center py-5 px-6 gap-3">
+        <header className="relative z-50 flex flex-col items-center justify-center pt-4 pb-2 px-6 gap-2">
           <div className="flex justify-center w-full">
             <img 
               src="/logo.png" 
               alt="Logo Fundación Caminemos Juntos" 
-              className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl"
+              className="h-14 md:h-16 w-auto object-contain drop-shadow-2xl"
             />
           </div>
           <nav className="hidden md:flex gap-8 font-semibold text-xs text-gray-200 tracking-wider uppercase drop-shadow-md">
@@ -154,23 +154,23 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* Texto Central del Banner */}
-        <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-4 pb-12">
+        {/* Texto Central del Banner - Más compacto */}
+        <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-2 pb-6">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-black text-white drop-shadow-2xl tracking-tight"
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-black text-white drop-shadow-2xl tracking-tight"
           >
             Salud al alcance de todos
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-100 font-medium drop-shadow-lg"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-base md:text-xl text-gray-100 font-medium drop-shadow-lg"
           >
-            Brindamos atención médica solidaria y de calidad para el bienestar y desarrollo integral de las familias.
+            Atención médica solidaria y de calidad para el desarrollo integral de las familias.
           </motion.p>
         </div>
       </section>
