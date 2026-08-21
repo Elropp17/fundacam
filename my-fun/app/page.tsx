@@ -7,14 +7,14 @@ export default function Home() {
   const [seleccionada, setSeleccionada] = useState<any>(null);
   const [historiaActual, setHistoriaActual] = useState(0);
   
-  // ESTADO PARA LA ANIMACIÓN DEL SCROLL Y LOS HORARIOS
+  // ESTADOS PARA LA ANIMACIÓN DEL SCROLL, HORARIOS Y LA NUEVA PÁGINA DE HISTORIA
   const [isScrolled, setIsScrolled] = useState(false);
   const [diaSeleccionado, setDiaSeleccionado] = useState('Lunes');
+  const [mostrarHistoria, setMostrarHistoria] = useState(false);
 
   // EFECTO PARA DETECTAR CUÁNDO EL USUARIO BAJA LA PÁGINA
   useEffect(() => {
     const handleScroll = () => {
-      // Si baja más de 50px, activa el modo minimizado
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
@@ -47,14 +47,6 @@ export default function Home() {
       mensaje: 'Detrás de cada consulta hay una historia de superación. Nuestro mayor logro no es solo aliviar el dolor físico, sino devolver la sonrisa y la esperanza a quienes caminan junto a nosotros.'
     }
   ];
-
-  // Cambio automático cada 6 segundos
-  useEffect(() => {
-    const intervalo = setInterval(() => {
-      setHistoriaActual((prev) => (prev === historias.length - 1 ? 0 : prev + 1));
-    }, 6000); 
-    return () => clearInterval(intervalo);
-  }, [historias.length]);
 
   const categorias = [
     {
@@ -120,7 +112,6 @@ export default function Home() {
     }
   ];
 
-  // Datos para los horarios interactivos
   const horarios = [
     { dia: 'Lunes', consultas: ['Ginecología-Obstetricia', 'Otorrinolaringología', 'Laboratorios (exámenes de sangre)', 'Medicina general', 'Pediatría'] },
     { dia: 'Martes', consultas: ['Medicina general', 'Pediatría', 'Ecosonogramas', 'Ginecología-Obstetricia'] },
@@ -139,14 +130,11 @@ export default function Home() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
-  // Función para redirigir a WhatsApp
   const agendarCitaWhatsApp = () => {
     if (!seleccionada) return;
-    
-    const numeroTelefono = "584120000000"; // CAMBIAR POR EL NÚMERO REAL DE LA FUNDACIÓN
+    const numeroTelefono = "584120000000"; 
     const mensaje = `Hola Fundación Caminemos Juntos. Me gustaría agendar una cita médica. 💙\n\n*Especialidad:* ${seleccionada.nombre}\n*Especialista:* ${seleccionada.doctor}\n*Costo Solidario:* ${seleccionada.costo}\n\nPor favor, indíquenme los horarios disponibles. ¡Gracias!`;
     const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
-    
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -155,7 +143,7 @@ export default function Home() {
       
       {/* HEADER ANIMADO QUE SE MINIMIZA AL HACER SCROLL */}
       <motion.header 
-        className="sticky top-0 z-50 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
+        className="sticky top-0 z-40 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
         initial={false}
         animate={{
           height: isScrolled ? '90px' : '40vh',
@@ -163,40 +151,30 @@ export default function Home() {
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        
-        {/* Fondo del Banner */}
         <div className="absolute inset-0">
           <img 
             src="/banner.jpeg" 
             alt="Atención médica comunitaria" 
             className="w-full h-full object-cover object-center opacity-60"
           />
-          {/* La capa oscura se hace más intensa cuando se minimiza para que el menú resalte mejor */}
           <div className={`absolute inset-0 bg-gradient-to-b transition-colors duration-500 ${isScrolled ? 'from-black/80 to-black/90' : 'from-black/40 via-black/20 to-black/60'}`}></div>
         </div>
         
-        {/* 1. Logo */}
         <motion.div 
           layout
           className="relative z-20 flex justify-center w-full"
-          animate={{
-            paddingTop: isScrolled ? '8px' : '24px',
-            paddingBottom: isScrolled ? '0px' : '8px'
-          }}
+          animate={{ paddingTop: isScrolled ? '8px' : '24px', paddingBottom: isScrolled ? '0px' : '8px' }}
         >
           <motion.img 
             layout
             src="/logo.png" 
             alt="Logo Fundación Caminemos Juntos" 
             className="w-auto object-contain drop-shadow-2xl"
-            animate={{
-              height: isScrolled ? '40px' : '128px' // Se reduce el logo de tamaño
-            }}
+            animate={{ height: isScrolled ? '40px' : '128px' }}
             transition={{ duration: 0.4 }}
           />
         </motion.div>
 
-        {/* 2. Texto Central (Aparece/Desaparece con AnimatePresence) */}
         <AnimatePresence>
           {!isScrolled && (
             <motion.div 
@@ -216,22 +194,93 @@ export default function Home() {
           )}
         </AnimatePresence>
 
-        {/* 3. Navegación (Se ajusta al espacio minimizado) */}
         <motion.nav 
           layout
           className="relative z-20 flex flex-wrap justify-center gap-4 md:gap-10 font-bold text-xs md:text-sm text-gray-100 tracking-wider uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] px-4"
-          animate={{
-            paddingBottom: isScrolled ? '12px' : '32px',
-            paddingTop: isScrolled ? '8px' : '0px'
-          }}
+          animate={{ paddingBottom: isScrolled ? '12px' : '32px', paddingTop: isScrolled ? '8px' : '0px' }}
         >
-          <a href="#" className="hover:text-pink-400 transition-colors">Qué hacemos</a>
+          {/* BOTÓN INTERACTIVO PARA "QUÉ HACEMOS" */}
+          <button onClick={() => setMostrarHistoria(true)} className="hover:text-pink-400 transition-colors uppercase cursor-pointer">
+            Qué hacemos
+          </button>
           <a href="#" className="hover:text-blue-300 transition-colors">Especialidades</a>
           <a href="#" className="hover:text-green-400 transition-colors">Novedades</a>
           <a href="#" className="hover:text-blue-300 transition-colors">Contacto</a>
         </motion.nav>
-
       </motion.header>
+
+      {/* MODAL: PÁGINA "QUÉ HACEMOS" E HISTORIA */}
+      <AnimatePresence>
+        {mostrarHistoria && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 z-[60] flex items-center justify-center p-4 md:p-8 backdrop-blur-md overflow-y-auto"
+            onClick={() => setMostrarHistoria(false)}
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.95, y: 20, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+              className="bg-white rounded-[2rem] shadow-2xl max-w-5xl w-full p-8 md:p-14 relative overflow-hidden flex flex-col my-auto cursor-default"
+              onClick={(e) => e.stopPropagation()} 
+            >
+              {/* Elementos decorativos */}
+              <div className="absolute -top-32 -right-32 w-64 h-64 bg-pink-400 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+              <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+              {/* Botón de cerrar */}
+              <button 
+                onClick={() => setMostrarHistoria(false)}
+                className="absolute top-6 right-6 text-gray-400 hover:text-red-500 text-4xl font-bold transition-colors z-20 bg-gray-50 hover:bg-red-50 rounded-full w-12 h-12 flex items-center justify-center"
+              >
+                &times;
+              </button>
+
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-black text-gray-800 mb-4 tracking-tight">Nuestra Historia</h2>
+                <div className="w-20 h-1 bg-pink-500 rounded-full mb-10"></div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-600 text-lg leading-relaxed">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-inner">🌱</span>
+                      <h3 className="text-2xl font-bold text-blue-600">¿Cómo Empezamos?</h3>
+                    </div>
+                    <p className="mb-4">
+                      La Fundación Caminemos Juntos nació de un profundo deseo de transformar realidades. Observando la necesidad de atención médica oportuna y accesible en las comunidades de Barquisimeto y todo el Estado Lara, decidimos unir fuerzas y voluntades.
+                    </p>
+                    <p>
+                      Comenzamos nuestra labor con pequeñas jornadas de atención comunitaria, llevando consultas básicas y una mano amiga a quienes más lo necesitaban. La respuesta de las familias y sus sonrisas de alivio nos impulsaron a soñar más grande y a estructurar el centro médico integral que somos hoy en día.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="bg-pink-100 text-pink-600 w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-inner">🤝</span>
+                      <h3 className="text-2xl font-bold text-pink-600">¿Qué Hacemos?</h3>
+                    </div>
+                    <p className="mb-4">
+                      En la actualidad, ofrecemos un espacio seguro, cálido y profesional con múltiples especialidades médicas a costos solidarios. Desde pediatría y ginecología, hasta oncología y apoyo psicológico, trabajamos para garantizar que la salud de calidad no sea un privilegio.
+                    </p>
+                    <p>
+                      Más allá de una consulta médica, impulsamos proyectos de educación preventiva, asistencia emocional y apoyo directo a la comunidad. Creemos firmemente que brindar salud es proteger a la familia, y que la única forma de construir un futuro fuerte es caminando juntos.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-12 bg-gradient-to-r from-blue-50 to-pink-50 p-6 rounded-2xl border border-blue-100 text-center shadow-sm">
+                  <p className="text-xl md:text-2xl font-semibold text-gray-700 italic">
+                    "Cada paso que damos es una huella de amor. Tu bienestar es nuestro mayor compromiso."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Contenido Principal (Especialidades) */}
       <main className="max-w-6xl mx-auto pt-14 pb-12 px-6 flex-grow">
@@ -250,9 +299,7 @@ export default function Home() {
           {categorias.map((categoria, index) => (
             <motion.div 
               key={categoria.id} 
-              className={`flex flex-col gap-6 relative ${
-                index !== 2 ? 'md:border-r-2 md:border-gray-200 md:pr-10' : ''
-              }`}
+              className={`flex flex-col gap-6 relative ${index !== 2 ? 'md:border-r-2 md:border-gray-200 md:pr-10' : ''}`}
               variants={itemVariants}
             >
               <div className={`${categoria.headerBg} text-white text-center py-3 px-4 rounded-full font-bold text-sm shadow-md flex items-center justify-center min-h-[60px]`}>
@@ -280,7 +327,7 @@ export default function Home() {
         </motion.div>
       </main>
 
-      {/* NUEVA SECCIÓN: HORARIOS DIARIOS INTERACTIVOS */}
+      {/* HORARIOS DIARIOS INTERACTIVOS */}
       <section className="max-w-4xl mx-auto w-full px-6 py-10 mb-10">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-extrabold text-gray-800 tracking-tight">Horarios de Consultas</h3>
@@ -288,7 +335,6 @@ export default function Home() {
           <p className="text-gray-500 mt-4 text-base">Planifica tu visita seleccionando el día de tu preferencia.</p>
         </div>
 
-        {/* Pestañas (Tabs) de los días */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {horarios.map((diaInfo) => (
             <button
@@ -305,7 +351,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Contenido animado del día seleccionado */}
         <div className="bg-white rounded-[2rem] shadow-xl p-8 border border-gray-100 min-h-[250px] relative overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -383,14 +428,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MODAL / PÁGINA EMERGENTE */}
+      {/* MODAL / CITA DOCTORES */}
       <AnimatePresence>
         {seleccionada && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto"
+            className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto"
             onClick={() => setSeleccionada(null)}
           >
             <motion.div 
