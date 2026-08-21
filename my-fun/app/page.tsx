@@ -7,8 +7,9 @@ export default function Home() {
   const [seleccionada, setSeleccionada] = useState<any>(null);
   const [historiaActual, setHistoriaActual] = useState(0);
   
-  // ESTADO PARA LA ANIMACIÓN DEL SCROLL
+  // ESTADO PARA LA ANIMACIÓN DEL SCROLL Y LOS HORARIOS
   const [isScrolled, setIsScrolled] = useState(false);
+  const [diaSeleccionado, setDiaSeleccionado] = useState('Lunes');
 
   // EFECTO PARA DETECTAR CUÁNDO EL USUARIO BAJA LA PÁGINA
   useEffect(() => {
@@ -111,12 +112,21 @@ export default function Home() {
           descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza. Trabajamos con dedicación incansable para aliviar tu dolor y restaurar tu movilidad, garantizando que sigas caminando por la vida sin limitaciones ni miedos.' },
         { id: 'n4', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg',
           descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio, explicándote cada detalle en pantalla para que te sientas tranquilo, informado y seguro. Tu confianza en nosotros es lo que más valoramos.' },
-        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Carlos Giménez', costo: '$15', 
+        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Elsa Perez', costo: '$4', 
           descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones. Nuestro objetivo es que vuelvas a realizar tus actividades cotidianas con total libertad, fuerza y confianza.' },
-        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Valeria Díaz', costo: '$20', 
+        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Alexandra Perez', costo: '$8', img: '/psico.jpg',
           descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar, gestionar tus emociones y encontrar las herramientas necesarias para alcanzar la paz mental y el bienestar.' },
       ]
     }
+  ];
+
+  // Datos para los horarios interactivos
+  const horarios = [
+    { dia: 'Lunes', consultas: ['Ginecología-Obstetricia', 'Otorrinolaringología', 'Laboratorios (exámenes de sangre)', 'Medicina general', 'Pediatría'] },
+    { dia: 'Martes', consultas: ['Medicina general', 'Pediatría', 'Ecosonogramas', 'Ginecología-Obstetricia'] },
+    { dia: 'Miércoles', consultas: ['Laboratorios (exámenes de sangre)', 'Ecosonogramas', 'Medicina Interna', 'Psicología'] },
+    { dia: 'Jueves', consultas: ['Medicina general', 'Traumatología', 'Psicología', 'Medicina Interna', 'Fisioterapeuta'] },
+    { dia: 'Viernes', consultas: ['Laboratorio (exámenes de sangre)', 'Medicina general', 'Ecosonogramas', 'Fisioterapeuta'] }
   ];
 
   const containerVariants = {
@@ -180,7 +190,7 @@ export default function Home() {
             alt="Logo Fundación Caminemos Juntos" 
             className="w-auto object-contain drop-shadow-2xl"
             animate={{
-              height: isScrolled ? '40px' : '128px' // Se reduce el logo de tamaño 32 a 10
+              height: isScrolled ? '40px' : '128px' // Se reduce el logo de tamaño
             }}
             transition={{ duration: 0.4 }}
           />
@@ -269,6 +279,55 @@ export default function Home() {
           ))}
         </motion.div>
       </main>
+
+      {/* NUEVA SECCIÓN: HORARIOS DIARIOS INTERACTIVOS */}
+      <section className="max-w-4xl mx-auto w-full px-6 py-10 mb-10">
+        <div className="text-center mb-8">
+          <h3 className="text-3xl font-extrabold text-gray-800 tracking-tight">Horarios de Consultas</h3>
+          <div className="w-20 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
+          <p className="text-gray-500 mt-4 text-base">Planifica tu visita seleccionando el día de tu preferencia.</p>
+        </div>
+
+        {/* Pestañas (Tabs) de los días */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {horarios.map((diaInfo) => (
+            <button
+              key={diaInfo.dia}
+              onClick={() => setDiaSeleccionado(diaInfo.dia)}
+              className={`px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 ${
+                diaSeleccionado === diaInfo.dia 
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105' 
+                  : 'bg-white text-gray-500 border border-gray-200 hover:bg-blue-50 hover:text-blue-600'
+              }`}
+            >
+              {diaInfo.dia}
+            </button>
+          ))}
+        </div>
+
+        {/* Contenido animado del día seleccionado */}
+        <div className="bg-white rounded-[2rem] shadow-xl p-8 border border-gray-100 min-h-[250px] relative overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={diaSeleccionado}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+              {horarios.find(h => h.dia === diaSeleccionado)?.consultas.map((consulta, i) => (
+                <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-50">
+                  <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md flex-shrink-0">
+                    🩺
+                  </div>
+                  <span className="font-semibold text-gray-700 leading-tight">{consulta}</span>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       {/* SECCIÓN DEL CARRUSEL */}
       <section className="max-w-6xl mx-auto w-full py-16 px-6 mb-20 flex-grow">
