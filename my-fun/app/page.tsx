@@ -103,6 +103,23 @@ export default function Home() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
+  // Función para redirigir a WhatsApp con los datos de la cita
+  const agendarCitaWhatsApp = () => {
+    if (!seleccionada) return;
+    
+    // CAMBIA ESTE NÚMERO POR EL DE LA FUNDACIÓN (código 58 + número, sin el '+')
+    const numeroTelefono = "584120000000"; 
+    
+    // Plantilla del mensaje que se enviará
+    const mensaje = `Hola Fundación Caminemos Juntos. Me gustaría agendar una cita médica. 💙\n\n*Especialidad:* ${seleccionada.nombre}\n*Especialista:* ${seleccionada.doctor}\n*Costo Solidario:* ${seleccionada.costo}\n\nPor favor, indíquenme los horarios disponibles. ¡Gracias!`;
+
+    // Codificar el mensaje para que funcione en la URL
+    const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+    
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
@@ -274,7 +291,11 @@ export default function Home() {
                   <span className="text-gray-500 font-semibold uppercase tracking-wider text-sm">Costo Solidario:</span>
                   <span className="text-3xl font-black text-teal-600">{seleccionada.costo}</span>
                 </div>
-                <button className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                {/* AQUI SE AGREGO EL ONCLICK CON LA FUNCIÓN */}
+                <button 
+                  onClick={agendarCitaWhatsApp}
+                  className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+                >
                   Agendar Cita Ahora
                 </button>
               </div>
