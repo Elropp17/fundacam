@@ -209,6 +209,85 @@ export default function Home() {
         </motion.nav>
       </motion.header>
 
+      {/* SECCIÓN DE NOTICIAS Y JORNADAS SOLIDARIAS */}
+      <section className="max-w-7xl mx-auto w-full px-6 pt-16 pb-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col md:flex-row"
+        >
+          {/* Decoración de fondo */}
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-teal-400 rounded-full blur-3xl opacity-20"></div>
+
+          {/* Contenido Izquierda: Lo que hemos hecho */}
+          <div className="p-8 md:p-12 md:w-3/5 text-white z-10 flex flex-col justify-center">
+            <span className="bg-pink-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block w-max mb-4 shadow-sm">
+              Noticias y Novedades
+            </span>
+            <h3 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight drop-shadow-md">
+              Llevando salud a cada rincón de Barquisimeto
+            </h3>
+            <p className="text-blue-50 text-base md:text-lg mb-8 leading-relaxed">
+              Nuestras jornadas médicas comunitarias han impactado a cientos de familias, acercando especialistas, medicinas y mucho amor a quienes más lo necesitan. ¡Seguimos caminando juntos por la salud de nuestra gente!
+            </p>
+            
+            {/* Contadores de impacto */}
+            <div className="flex gap-4">
+              <div className="bg-white/10 rounded-2xl p-4 border border-white/20 backdrop-blur-sm flex-1 text-center shadow-lg">
+                <span className="block text-3xl font-black text-pink-300 mb-1">+500</span>
+                <span className="text-xs text-blue-100 uppercase tracking-wider font-semibold">Pacientes Atendidos</span>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-4 border border-white/20 backdrop-blur-sm flex-1 text-center shadow-lg">
+                <span className="block text-3xl font-black text-teal-300 mb-1">+15</span>
+                <span className="text-xs text-blue-100 uppercase tracking-wider font-semibold">Comunidades Visitadas</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Contenido Derecha: Próxima Jornada */}
+          <div className="bg-white p-8 md:p-12 md:w-2/5 z-10 flex flex-col justify-center relative">
+            <div className="absolute top-0 right-0 w-20 h-20 bg-pink-50 rounded-bl-full flex items-center justify-center">
+              <span className="text-3xl animate-bounce pt-2 pl-2">📢</span>
+            </div>
+            
+            <h4 className="text-2xl font-extrabold text-gray-800 mb-2">¡Nuestra Próxima Jornada!</h4>
+            <p className="text-gray-500 text-sm mb-8">Mantente atento a nuestras redes sociales para confirmar los especialistas que nos acompañarán.</p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 group">
+                <div className="w-14 h-14 bg-blue-50 group-hover:bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl shadow-sm transition-colors">
+                  📅
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Fecha estimada</p>
+                  <p className="text-xl font-bold text-gray-700">Septiembre 2026</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4 group">
+                <div className="w-14 h-14 bg-pink-50 group-hover:bg-pink-100 rounded-full flex items-center justify-center text-pink-600 text-2xl shadow-sm transition-colors">
+                  📍
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Ubicación</p>
+                  <p className="text-xl font-bold text-gray-700">Por confirmar</p>
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => window.open('https://instagram.com/tu_usuario', '_blank')}
+              className="mt-8 w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+            >
+              Seguir en Instagram
+            </button>
+          </div>
+        </motion.div>
+      </section>
+
       {/* MODAL: PÁGINA "QUÉ HACEMOS" E HISTORIA */}
       <AnimatePresence>
         {mostrarHistoria && (
