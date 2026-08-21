@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CFundación Caminemos Juntos | Barquisimeto | Especialidades Médicas",
+  title: "Fundación Caminemos Juntos | Barquisimeto | Especialidades Médicas",
   description: "❤️ Conoce nuestras especialidades: Cardiología, Neumonología, Pediatría, Oftalmología, Neurología y más. Descubre nuestros servicios y agenda tu consulta solidaria.",
 };
 

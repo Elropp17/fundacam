@@ -30,19 +30,19 @@ export default function Home() {
   const historias = [
     {
       id: 1,
-      imagen: '/jornada1.jpg', 
-      titulo: 'Llevando esperanza a las comunidades',
+      imagen: '/imagen1.jpg', 
+      titulo: 'La Salud de todos nos importa',
       mensaje: 'Cada paso que damos es una huella de amor. Nos acercamos a quienes más lo necesitan para brindar atención médica, escucha activa y una mano amiga cuando las fuerzas flaquean.'
     },
     {
       id: 2,
-      imagen: '/jornada2.jpg',
+      imagen: '/imagen3.jpeg',
       titulo: 'Bienestar para toda la familia',
       mensaje: 'Creemos en el cuidado integral. En nuestras jornadas médicas y de asistencia, nos aseguramos de proteger la salud de todos, ofreciendo espacios de atención cálida y humana.'
     },
     {
       id: 3,
-      imagen: '/jornada3.jpg',
+      imagen: '/imagen2.jpeg',
       titulo: 'Más que medicina, somos familia',
       mensaje: 'Detrás de cada consulta hay una historia de superación. Nuestro mayor logro no es solo aliviar el dolor físico, sino devolver la sonrisa y la esperanza a quienes caminan junto a nosotros.'
     }
