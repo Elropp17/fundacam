@@ -114,14 +114,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* 1. HEADER ANIMADO */}
+      {/* 1. HEADER ANIMADO (CORREGIDO A FIXED Y CON POINTER-EVENTS-NONE) */}
       <motion.header 
-        className="sticky top-0 z-40 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
+        className="fixed top-0 z-50 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
         initial={false}
         animate={{ height: isScrolled ? '90px' : '40vh', minHeight: isScrolled ? '90px' : '350px' }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 pointer-events-none">
           <img src="/banner.jpeg" alt="Atención médica comunitaria" className="w-full h-full object-cover object-center opacity-60" />
           <div className={`absolute inset-0 bg-gradient-to-b transition-colors duration-500 ${isScrolled ? 'from-black/80 to-black/90' : 'from-black/40 via-black/20 to-black/60'}`}></div>
         </div>
@@ -147,7 +147,10 @@ export default function Home() {
         </motion.nav>
       </motion.header>
 
-      {/* 2. SECCIÓN DE NOTICIAS (AHORA SÍ, ÚNICA) */}
+      {/* ESPACIADOR FANTASMA PARA EVITAR EL REBOTE DEL SCROLL */}
+      <div className="h-[40vh] min-h-[350px] w-full pointer-events-none"></div>
+
+      {/* 2. SECCIÓN DE NOTICIAS */}
       <section className="max-w-7xl mx-auto w-full px-6 pt-16 pb-4">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }} className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col md:flex-row">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
