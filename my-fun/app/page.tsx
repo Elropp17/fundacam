@@ -121,6 +121,14 @@ export default function Home() {
         animate={{ height: isScrolled ? '90px' : '40vh', minHeight: isScrolled ? '90px' : '350px' }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="/banner.jpeg" alt="Atención médica comunitaria" className="w-full h-full object-cover object-center opacity-60" />
+          <div className={`absolute inset-0 bg-gradient-to-b transition-colors duration-500 ${isScrolled ? 'from-black/80 to-black/90' : 'from-black/40 via-black/20 to-black/60'}`}></div>
+        </div>
+        
+        <motion.div layout className="relative z-20 flex justify-center w-full" animate={{ paddingTop: isScrolled ? '8px' : '24px', paddingBottom: isScrolled ? '0px' : '8px' }}>
+          <motion.img layout src="/logo.png" alt="Logo Fundación Caminemos Juntos" className="w-auto object-contain drop-shadow-2xl" animate={{ height: isScrolled ? '40px' : '128px' }} transition={{ duration: 0.4 }} />
+        </motion.div>
         <div className="absolute inset-0">
           <img src="/banner.jpeg" alt="Atención médica comunitaria" className="w-full h-full object-cover object-center opacity-60" />
           <div className={`absolute inset-0 bg-gradient-to-b transition-colors duration-500 ${isScrolled ? 'from-black/80 to-black/90' : 'from-black/40 via-black/20 to-black/60'}`}></div>
