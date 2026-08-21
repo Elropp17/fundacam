@@ -123,7 +123,7 @@ export default function Home() {
         {/* Logo en el centro */}
         <div className="flex justify-center w-full">
           <img 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="Logo Fundación Caminemos Juntos" 
             className="h-28 md:h-36 w-auto object-contain drop-shadow-2xl"
           />
