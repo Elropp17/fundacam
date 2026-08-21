@@ -125,42 +125,36 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* SECCIÓN CABECERA + BANNER FUSIONADOS - ALTURA REDUCIDA */}
-      <section className="relative w-full min-h-[30vh] md:min-h-[250px] flex flex-col overflow-hidden">
+      {/* SECCIÓN CABECERA + BANNER FUSIONADOS - REORGANIZADA */}
+      <section className="relative w-full min-h-[40vh] md:min-h-[350px] flex flex-col justify-between overflow-hidden bg-[#050505]">
         
-        {/* Fondo del Banner */}
-        <div className="absolute inset-0 bg-black">
+        {/* Fondo del Banner (Opacidad ajustada para que se vea más natural la foto) */}
+        <div className="absolute inset-0">
           <img 
             src="/banner.jpeg" 
             alt="Atención médica comunitaria" 
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover object-center opacity-60"
           />
+          {/* Capa sutil para asegurar que los textos blancos se lean bien sobre la foto */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
         </div>
         
-        {/* Cabecera (Logo y Navegación) flotando sobre el banner */}
-        <header className="relative z-50 flex flex-col items-center justify-center pt-4 pb-2 px-6 gap-2">
-          <div className="flex justify-center w-full">
-            <img 
-              src="/logo.png" 
-              alt="Logo Fundación Caminemos Juntos" 
-              className="h-14 md:h-16 w-auto object-contain drop-shadow-2xl"
-            />
-          </div>
-          <nav className="hidden md:flex gap-8 font-semibold text-xs text-gray-200 tracking-wider uppercase drop-shadow-md">
-            <a href="#" className="hover:text-pink-400 transition-colors">Qué hacemos</a>
-            <a href="#" className="hover:text-blue-300 transition-colors">Especialidades</a>
-            <a href="#" className="hover:text-green-400 transition-colors">Novedades</a>
-            <a href="#" className="hover:text-blue-300 transition-colors">Contacto</a>
-          </nav>
+        {/* 1. Logo (Header) flotando arriba, aumentado de tamaño */}
+        <header className="relative z-20 flex justify-center pt-6 pb-2 px-6">
+          <img 
+            src="/logo.png" 
+            alt="Logo Fundación Caminemos Juntos" 
+            className="h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
+          />
         </header>
 
-        {/* Texto Central del Banner - Más compacto */}
-        <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-2 pb-6">
+        {/* 2. Texto Central del Banner */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto gap-2 py-6 flex-grow">
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-black text-white drop-shadow-2xl tracking-tight"
+            className="text-3xl md:text-5xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] tracking-tight"
           >
             Salud al alcance de todos
           </motion.h2>
@@ -168,11 +162,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base md:text-xl text-gray-100 font-medium drop-shadow-lg"
+            className="text-base md:text-xl text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
           >
             Atención médica solidaria y de calidad para el desarrollo integral de las familias.
           </motion.p>
         </div>
+
+        {/* 3. Navegación (Movida abajo del texto) */}
+        <nav className="relative z-20 flex flex-wrap justify-center gap-4 md:gap-10 font-bold text-xs md:text-sm text-gray-100 tracking-wider uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] pb-8 px-4">
+          <a href="#" className="hover:text-pink-400 transition-colors">Qué hacemos</a>
+          <a href="#" className="hover:text-blue-300 transition-colors">Especialidades</a>
+          <a href="#" className="hover:text-green-400 transition-colors">Novedades</a>
+          <a href="#" className="hover:text-blue-300 transition-colors">Contacto</a>
+        </nav>
       </section>
 
       {/* Contenido Principal (Especialidades) */}
