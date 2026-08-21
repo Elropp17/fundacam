@@ -62,7 +62,7 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]',
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Ana López', costo: '$25',
+        { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Ana López', costo: '$25', img: '/pediatra.jpg',
           descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva y sin miedos. Acompañamos el crecimiento de los más pequeños de la casa, asegurando que su futuro esté lleno de salud, fuerza y alegría.' },
         { id: 'g2', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30',
           descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes junto a tu familia. Sabemos que tus ojos son el reflejo de tu alma, y nosotros estamos aquí para protegerlos con la mejor tecnología.' },
