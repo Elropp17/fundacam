@@ -365,7 +365,7 @@ export default function Home() {
 
               <div className="w-full md:w-5/12 flex flex-col items-center gap-5 z-10">
                 <div className="w-48 h-48 md:w-56 md:h-56 bg-gray-100 rounded-[2rem] shadow-lg border-4 border-white overflow-hidden flex items-center justify-center text-gray-400">
-                   {seleccionada.img ? <img src={seleccionada.img} alt={seleccionada.doctor} className="w-full h-full object-cover" /> : <span className="text-sm font-semibold text-gray-400">Sin foto</span>}
+                   {seleccionada.img ? <img src={seleccionada.img} alt={seleccionada.doctor} className="w-full h-full object-cover object-top" /> : <span className="text-sm font-semibold text-gray-400">Sin foto</span>}
                 </div>
                 <div className="flex items-center gap-2 text-white bg-blue-500 px-5 py-2 rounded-full font-bold shadow-md">
                   <span className="text-xl drop-shadow-sm">{seleccionada.icon}</span>
