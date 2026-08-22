@@ -68,6 +68,7 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]',
       circleBorder: 'border-[#c9dfe8]',
       items: [
+        { id: 'g0', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina y Dra. Yohana Reyes', costo: '$10', descripcion: 'Nuestras especialistas te ofrecen una atención médica primaria, integral y familiar. Son el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
         { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
         { id: 'g2', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30', descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes.' },
         { id: 'g3', nombre: 'Otorrino', icon: '👂', doctor: 'Dra. Patricia León', costo: '$30', descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz.' },
@@ -105,7 +106,7 @@ export default function Home() {
 
   const agendarCitaWhatsApp = () => {
     if (!seleccionada) return;
-    const numeroTelefono = "584120000000"; 
+    const numeroTelefono = "582466654968"; 
     const mensaje = `Hola Fundación Caminemos Juntos. Me gustaría agendar una cita médica. 💙\n\n*Especialidad:* ${seleccionada.nombre}\n*Especialista:* ${seleccionada.doctor}\n*Costo Solidario:* ${seleccionada.costo}\n\nPor favor, indíquenme los horarios disponibles. ¡Gracias!`;
     const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -150,7 +151,7 @@ export default function Home() {
       {/* ESPACIADOR FANTASMA PARA EVITAR EL REBOTE DEL SCROLL */}
       <div className="h-[40vh] min-h-[350px] w-full pointer-events-none"></div>
 
-     {/* 2. SECCIÓN DE NOTICIAS */}
+      {/* 2. SECCIÓN DE NOTICIAS */}
       <section className="max-w-7xl mx-auto w-full px-6 pt-16 pb-4">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }} className="bg-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col md:flex-row">
           
