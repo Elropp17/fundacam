@@ -47,48 +47,58 @@ export default function Home() {
 
   const categorias = [
     {
-      id: 'critica',
-      titulo: 'ÁREA CRÍTICA Y CRÓNICA',
+      id: 'primaria',
+      titulo: 'ATENCIÓN PRIMARIA Y PEDIATRÍA',
+      headerBg: 'bg-[#3b9b9b]', 
+      circleBg: 'bg-[#ebf3f7]', 
+      circleBorder: 'border-[#c9dfe8]',
+      items: [
+        { id: 'p1', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina y Dra. Yohana Reyes', costo: '$10', img: '/general1.jpg', descripcion: 'Nuestras especialistas te ofrecen una atención médica primaria, integral y familiar. Son el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
+        { id: 'p2', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
+        { id: 'p3', nombre: 'Neuropediatra', icon: '🧒', doctor: 'Dra. Carmen Vivas', costo: '$45', descripcion: 'Entendemos profundamente la preocupación de los padres cuando se trata del desarrollo de sus pequeños. Con infinita ternura, paciencia y mucha vocación, evaluamos y guiamos a tus hijos.' },
+      ]
+    },
+    {
+      id: 'medicas',
+      titulo: 'ESPECIALIDADES MÉDICAS',
       headerBg: 'bg-[#c70e5d]', 
       circleBg: 'bg-[#faeaf1]', 
       circleBorder: 'border-[#f1c7d8]',
       items: [
-        { id: 'c1', nombre: 'Neumonólogo', icon: '🫁', doctor: 'Dra. María Fernández', costo: '$30', descripcion: 'Respirar con tranquilidad es el puente hacia una vida plena. En la Fundación, no solo tratamos tus pulmones; escuchamos tus inquietudes y te brindamos un acompañamiento cálido y humano.' },
-        { id: 'c2', nombre: 'Cardiólogo', icon: '❤️', doctor: 'Dr. Carlos Mendoza', costo: '$35', descripcion: 'Tu corazón no es solo un órgano, es el motor de tus sueños y emociones. Nuestro equipo de cardiología te recibe con los brazos abiertos para cuidar cada uno de tus latidos.' },
-        { id: 'c3', nombre: 'Gastroenterólogo', icon: '🩺', doctor: 'Dra. Elena Rojas', costo: '$30', descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia.' },
-        { id: 'c4', nombre: 'Endocrino', icon: '🦋', doctor: 'Dr. Luis Silva', costo: '$30', descripcion: 'El balance de tu cuerpo es fundamental para sentirte en armonía. Te acompañamos con cariño y comprensión para regular tu metabolismo y cuidar de ti integralmente.' },
-        { id: 'c5', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar.' },
-        { id: 'c6', nombre: 'Oncólogo', icon: '🥼', doctor: 'Dr. Jose Gregorio Hernandez', costo: '$10', img: '/onco.jpg', descripcion: 'Enfrentar un diagnóstico difícil requiere de un equipo médico compasivo y altamente capacitado. Te acompañamos en cada etapa de tu tratamiento oncológico con empatía.' },
+        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', img: '/fisio.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
+        { id: 'm2', nombre: 'Cardiólogo', icon: '❤️', doctor: 'Dr. Carlos Mendoza', costo: '$35', descripcion: 'Tu corazón no es solo un órgano, es el motor de tus sueños y emociones. Nuestro equipo de cardiología te recibe con los brazos abiertos para cuidar cada uno de tus latidos.' },
+        { id: 'm3', nombre: 'Neumonólogo', icon: '🫁', doctor: 'Dra. María Fernández', costo: '$30', descripcion: 'Respirar con tranquilidad es el puente hacia una vida plena. En la Fundación, no solo tratamos tus pulmones; escuchamos tus inquietudes y te brindamos un acompañamiento cálido y humano.' },
+        { id: 'm4', nombre: 'Gastroenterólogo', icon: '🩺', doctor: 'Dra. Elena Rojas', costo: '$30', descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia.' },
+        { id: 'm5', nombre: 'Endocrino', icon: '🦋', doctor: 'Dr. Luis Silva', costo: '$30', descripcion: 'El balance de tu cuerpo es fundamental para sentirte en armonía. Te acompañamos con cariño y comprensión para regular tu metabolismo y cuidar de ti integralmente.' },
+        { id: 'm6', nombre: 'Neurólogo', icon: '🧠', doctor: 'Dr. Andrés Torres', costo: '$40', descripcion: 'Tu mente y tu sistema nervioso son el centro de todo lo que eres. Comprendemos la complejidad de tus padecimientos y te ofrecemos un apoyo médico firme, pero profundamente compasivo.' },
+        { id: 'm7', nombre: 'Oncólogo', icon: '🥼', doctor: 'Dr. Jose Gregorio Hernandez', costo: '$10', img: '/onco.jpg', descripcion: 'Enfrentar un diagnóstico difícil requiere de un equipo médico compasivo y altamente capacitado. Te acompañamos en cada etapa de tu tratamiento oncológico con empatía.' },
       ]
     },
     {
-      id: 'general',
-      titulo: 'MEDICINA GENERAL Y QUIRÚRGICA',
-      headerBg: 'bg-[#3b9b9b]', 
-      circleBg: 'bg-[#ebf3f7]',
-      circleBorder: 'border-[#c9dfe8]',
-      items: [
-        { id: 'g0', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina y Dra. Yohana Reyes', costo: '$10', descripcion: 'Nuestras especialistas te ofrecen una atención médica primaria, integral y familiar. Son el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
-        { id: 'g1', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
-        { id: 'g2', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30', descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes.' },
-        { id: 'g3', nombre: 'Otorrino', icon: '👂', doctor: 'Dra. Patricia León', costo: '$30', descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz.' },
-        { id: 'g4', nombre: 'Urólogo', icon: '💧', doctor: 'Dr. Javier Pineda', costo: '$35', img: '/javier.jpg', descripcion: 'Abordamos tu salud íntima con el máximo respeto, absoluta confidencialidad y una gran empatía. Sabemos que dar el paso puede generar dudas o temores, por eso te ofrecemos un espacio seguro.' },
-        { id: 'g5', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$9', img: '/andres.jpg', descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de solidaridad donde tu salud integral es lo primero.' }, 
-      ]
-    },
-    {
-      id: 'neuro',
-      titulo: 'NEUROLOGÍA Y APOYO DIAGNÓSTICO',
+      id: 'quirurgicas',
+      titulo: 'ESPECIALIDADES MÉDICO-QUIRÚRGICAS',
       headerBg: 'bg-[#4b9ba5]', 
       circleBg: 'bg-[#ebf3f7]',
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'n1', nombre: 'Neurólogo', icon: '🧠', doctor: 'Dr. Andrés Torres', costo: '$40', descripcion: 'Tu mente y tu sistema nervioso son el centro de todo lo que eres. Comprendemos la complejidad de tus padecimientos y te ofrecemos un apoyo médico firme, pero profundamente compasivo.' },
-        { id: 'n2', nombre: 'Neuropediatra', icon: '🧒', doctor: 'Dra. Carmen Vivas', costo: '$45', descripcion: 'Entendemos profundamente la preocupación de los padres cuando se trata del desarrollo de sus pequeños. Con infinita ternura, paciencia y mucha vocación, evaluamos y guiamos a tus hijos.' },
-        { id: 'n3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Ender Pacheco', costo: '$8', img: '/trauma.jpg', descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza.' },
-        { id: 'n4', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg', descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio.' },
-        { id: 'n5', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Elsa Perez', costo: '$4', descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones.' },
-        { id: 'n6', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Alexandra Perez', costo: '$8', img: '/psico.jpg', descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar y gestionar tus emociones.' },
+        { id: 'q1', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$9', img: '/andres.jpg', descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de solidaridad donde tu salud integral es lo primero.' }, 
+        { id: 'q2', nombre: 'Urólogo', icon: '💧', doctor: 'Dr. Javier Pineda', costo: '$35', img: '/javier.jpg', descripcion: 'Abordamos tu salud íntima con el máximo respeto, absoluta confidencialidad y una gran empatía. Sabemos que dar el paso puede generar dudas o temores, por eso te ofrecemos un espacio seguro.' },
+        { id: 'q3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Ender Pacheco', costo: '$8', img: '/trauma.jpg', descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza.' },
+        { id: 'q4', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30', descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes.' },
+        { id: 'q5', nombre: 'Otorrino', icon: '👂', doctor: 'Dra. Patricia León', costo: '$30', descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz.' },
+      ]
+    },
+    {
+      id: 'diagnostico',
+      titulo: 'APOYO DIAGNÓSTICO Y TERAPÉUTICO',
+      headerBg: 'bg-[#6366f1]', 
+      circleBg: 'bg-[#e0e7ff]', 
+      circleBorder: 'border-[#c7d2fe]',
+      items: [
+        { id: 'd1', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg', descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio.' },
+        { id: 'd2', nombre: 'Laboratorio Clínico', icon: '🔬', doctor: 'Servicio de Bioanálisis', costo: 'Variable', descripcion: 'Contamos con pruebas de laboratorio precisas y confiables para respaldar tu diagnóstico médico. Resultados rápidos, atención delicada y tecnología al servicio de tu salud.' },
+        { id: 'd3', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Alexandra Perez', costo: '$8', img: '/psico.jpg', descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar y gestionar tus emociones.' },
+        { id: 'd4', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Elsa Perez', costo: '$4', img: '/peuta.jpg', descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones.' },
       ]
     }
   ];
@@ -155,13 +165,11 @@ export default function Home() {
       <section className="max-w-7xl mx-auto w-full px-6 pt-16 pb-4">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }} className="bg-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden relative flex flex-col md:flex-row">
           
-          {/* IMAGEN DE FONDO CON CAPA AZUL TRANSPARENTE */}
           <div className="absolute inset-0 md:w-3/5 h-full">
             <img src="/fondo-noticias.jpg" alt="Fondo Jornadas Solidarias" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-blue-900/80"></div>
           </div>
 
-          {/* Lado Izquierdo (Textos sobre la imagen) */}
           <div className="p-8 md:p-12 md:w-3/5 text-white z-10 flex flex-col justify-center relative">
             <span className="bg-pink-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block w-max mb-4 shadow-sm">Noticias y Novedades</span>
             <h3 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight drop-shadow-md">Llevando salud a cada rincón de Barquisimeto</h3>
@@ -179,7 +187,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Lado Derecho (Tarjeta Blanca) */}
           <div className="bg-white p-8 md:p-12 md:w-2/5 z-10 flex flex-col justify-center relative shadow-[-15px_0_30px_rgba(0,0,0,0.15)]">
             <div className="absolute top-0 right-0 w-20 h-20 bg-pink-50 rounded-bl-full flex items-center justify-center">
               <span className="text-3xl animate-bounce pt-2 pl-2">📢</span>
@@ -256,27 +263,27 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* 4. ESPECIALIDADES MÉDICAS */}
-      <main className="max-w-6xl mx-auto pt-14 pb-12 px-6 flex-grow">
+      {/* 4. ESPECIALIDADES MÉDICAS (AHORA EN 4 COLUMNAS) */}
+      <main className="max-w-7xl mx-auto pt-14 pb-12 px-6 flex-grow">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-extrabold text-gray-800 tracking-tight">Nuestras Especialidades Médicas</h3>
           <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-10" variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
           {categorias.map((categoria, index) => (
-            <motion.div key={categoria.id} className={`flex flex-col gap-6 relative ${index !== 2 ? 'md:border-r-2 md:border-gray-200 md:pr-10' : ''}`} variants={itemVariants}>
-              <div className={`${categoria.headerBg} text-white text-center py-3 px-4 rounded-full font-bold text-sm shadow-md flex items-center justify-center min-h-[60px]`}>
-                <span className="w-3/4 leading-tight">{categoria.titulo}</span>
+            <motion.div key={categoria.id} className="flex flex-col gap-6" variants={itemVariants}>
+              <div className={`${categoria.headerBg} text-white text-center py-3 px-4 rounded-full font-bold text-xs shadow-md flex items-center justify-center min-h-[60px]`}>
+                <span className="w-11/12 leading-tight">{categoria.titulo}</span>
               </div>
 
-              <div className="flex flex-col gap-5 mt-2">
+              <div className="flex flex-col gap-4 mt-2">
                 {categoria.items.map((item) => (
-                  <div key={item.id} onClick={() => setSeleccionada(item)} className="flex items-center gap-4 group cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition-all">
-                    <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-sm border-2 ${categoria.circleBg} ${categoria.circleBorder} transition-transform group-hover:scale-110`}>
+                  <div key={item.id} onClick={() => setSeleccionada(item)} className="flex items-center gap-4 group cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition-all border border-transparent hover:border-gray-200">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-sm border-2 flex-shrink-0 ${categoria.circleBg} ${categoria.circleBorder} transition-transform group-hover:scale-110`}>
                       {item.icon}
                     </div>
-                    <span className="text-lg font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">{item.nombre}</span>
+                    <span className="text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">{item.nombre}</span>
                   </div>
                 ))}
               </div>
