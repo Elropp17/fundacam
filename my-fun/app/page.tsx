@@ -53,7 +53,8 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]', 
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'p1', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina y Dra. Yohana Reyes', costo: '$10', img: '/general1.jpg', descripcion: 'Nuestras especialistas te ofrecen una atención médica primaria, integral y familiar. Son el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
+        { id: 'p1_milagros', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina', costo: '$10', img: '/milagros.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
+        { id: 'p1_yohana', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Yohana Reyes', costo: '$10', img: '/general1.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
         { id: 'p2', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
         { id: 'p3', nombre: 'Neuropediatra', icon: '🧒', doctor: 'Dra. Carmen Vivas', costo: '$45', descripcion: 'Entendemos profundamente la preocupación de los padres cuando se trata del desarrollo de sus pequeños. Con infinita ternura, paciencia y mucha vocación, evaluamos y guiamos a tus hijos.' },
       ]
@@ -65,7 +66,7 @@ export default function Home() {
       circleBg: 'bg-[#faeaf1]', 
       circleBorder: 'border-[#f1c7d8]',
       items: [
-        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', img: '/fisio.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
+        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', img: '/internista.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
         { id: 'm2', nombre: 'Cardiólogo', icon: '❤️', doctor: 'Dr. Carlos Mendoza', costo: '$35', descripcion: 'Tu corazón no es solo un órgano, es el motor de tus sueños y emociones. Nuestro equipo de cardiología te recibe con los brazos abiertos para cuidar cada uno de tus latidos.' },
         { id: 'm3', nombre: 'Neumonólogo', icon: '🫁', doctor: 'Dra. María Fernández', costo: '$30', descripcion: 'Respirar con tranquilidad es el puente hacia una vida plena. En la Fundación, no solo tratamos tus pulmones; escuchamos tus inquietudes y te brindamos un acompañamiento cálido y humano.' },
         { id: 'm4', nombre: 'Gastroenterólogo', icon: '🩺', doctor: 'Dra. Elena Rojas', costo: '$30', descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia.' },
@@ -125,7 +126,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 font-sans selection:bg-blue-200 relative flex flex-col">
       
-      {/* 1. HEADER ANIMADO (CORREGIDO A FIXED Y CON POINTER-EVENTS-NONE) */}
+      {/* 1. HEADER ANIMADO */}
       <motion.header 
         className="fixed top-0 z-50 w-full flex flex-col justify-between overflow-hidden bg-[#050505] shadow-2xl"
         initial={false}
@@ -158,7 +159,7 @@ export default function Home() {
         </motion.nav>
       </motion.header>
 
-      {/* ESPACIADOR FANTASMA PARA EVITAR EL REBOTE DEL SCROLL */}
+      {/* ESPACIADOR FANTASMA */}
       <div className="h-[40vh] min-h-[350px] w-full pointer-events-none"></div>
 
       {/* 2. SECCIÓN DE NOTICIAS */}
@@ -263,7 +264,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* 4. ESPECIALIDADES MÉDICAS (AHORA EN 4 COLUMNAS) */}
+      {/* 4. ESPECIALIDADES MÉDICAS */}
       <main className="max-w-7xl mx-auto pt-14 pb-12 px-6 flex-grow">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-extrabold text-gray-800 tracking-tight">Nuestras Especialidades Médicas</h3>
