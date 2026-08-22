@@ -66,7 +66,7 @@ export default function Home() {
       circleBg: 'bg-[#faeaf1]', 
       circleBorder: 'border-[#f1c7d8]',
       items: [
-        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dr. Héctor Salas', costo: '$25', img: '/internista.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
+        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dra. Roselin Garcia ', costo: '$25', img: '/fisio.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
         { id: 'm2', nombre: 'Cardiólogo', icon: '❤️', doctor: 'Dr. Carlos Mendoza', costo: '$35', descripcion: 'Tu corazón no es solo un órgano, es el motor de tus sueños y emociones. Nuestro equipo de cardiología te recibe con los brazos abiertos para cuidar cada uno de tus latidos.' },
         { id: 'm3', nombre: 'Neumonólogo', icon: '🫁', doctor: 'Dra. María Fernández', costo: '$30', descripcion: 'Respirar con tranquilidad es el puente hacia una vida plena. En la Fundación, no solo tratamos tus pulmones; escuchamos tus inquietudes y te brindamos un acompañamiento cálido y humano.' },
         { id: 'm4', nombre: 'Gastroenterólogo', icon: '🩺', doctor: 'Dra. Elena Rojas', costo: '$30', descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia.' },
