@@ -53,10 +53,10 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]', 
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'p1_milagros', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina', costo: '$10', img: '/milagros.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
-        { id: 'p1_yohana', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Yohana Reyes', costo: '$10', img: '/general1.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
-        { id: 'p2', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$25', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
-        { id: 'p3', nombre: 'Neuropediatra', icon: '🧒', doctor: 'Dra. Carmen Vivas', costo: '$45', descripcion: 'Entendemos profundamente la preocupación de los padres cuando se trata del desarrollo de sus pequeños. Con infinita ternura, paciencia y mucha vocación, evaluamos y guiamos a tus hijos.' },
+        { id: 'p1_milagros', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Milagros Colina', costo: '$8', img: '/milagros.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
+        { id: 'p1_yohana', nombre: 'Medicina General', icon: '🩺', doctor: 'Dra. Yohana Reyes', costo: '$8', img: '/general1.jpg', descripcion: 'Nuestra especialista te ofrece una atención médica primaria, integral y familiar. Es el primer punto de apoyo para el diagnóstico, tratamiento y cuidado preventivo de tu salud, guiándote con calidez y profesionalismo.' },
+        { id: 'p2', nombre: 'Pediatra', icon: '👶', doctor: 'Dra. Lorena Ramos', costo: '$8', img: '/pediatra.jpg', descripcion: 'Sabemos que tus hijos son tu mayor tesoro. Por eso, hemos creado un ambiente lleno de amor, juegos y sonrisas donde el cuidado médico se transforma en una experiencia positiva.' },
+        { id: 'p3', nombre: 'Neuropediatra', icon: '🧒', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
       ]
     },
     {
@@ -66,12 +66,12 @@ export default function Home() {
       circleBg: 'bg-[#faeaf1]', 
       circleBorder: 'border-[#f1c7d8]',
       items: [
-        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dra. Roselin Garcia ', costo: '$25', img: '/fisio.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
-        { id: 'm2', nombre: 'Cardiólogo', icon: '❤️', doctor: 'Dr. Carlos Mendoza', costo: '$35', descripcion: 'Tu corazón no es solo un órgano, es el motor de tus sueños y emociones. Nuestro equipo de cardiología te recibe con los brazos abiertos para cuidar cada uno de tus latidos.' },
-        { id: 'm3', nombre: 'Neumonólogo', icon: '🫁', doctor: 'Dra. María Fernández', costo: '$30', descripcion: 'Respirar con tranquilidad es el puente hacia una vida plena. En la Fundación, no solo tratamos tus pulmones; escuchamos tus inquietudes y te brindamos un acompañamiento cálido y humano.' },
-        { id: 'm4', nombre: 'Gastroenterólogo', icon: '🩺', doctor: 'Dra. Elena Rojas', costo: '$30', descripcion: 'Entendemos que el equilibrio de tu cuerpo comienza desde adentro. Con profunda sensibilidad, te guiamos hacia una salud digestiva óptima, aliviando tus molestias con paciencia.' },
-        { id: 'm5', nombre: 'Endocrino', icon: '🦋', doctor: 'Dr. Luis Silva', costo: '$30', descripcion: 'El balance de tu cuerpo es fundamental para sentirte en armonía. Te acompañamos con cariño y comprensión para regular tu metabolismo y cuidar de ti integralmente.' },
-        { id: 'm6', nombre: 'Neurólogo', icon: '🧠', doctor: 'Dr. Andrés Torres', costo: '$40', descripcion: 'Tu mente y tu sistema nervioso son el centro de todo lo que eres. Comprendemos la complejidad de tus padecimientos y te ofrecemos un apoyo médico firme, pero profundamente compasivo.' },
+        { id: 'm1', nombre: 'Internista', icon: '⚕️', doctor: 'Dra. Roselin Garcia ', costo: '$8', img: '/fisio.jpg', descripcion: 'Tu salud integral es un rompecabezas que evaluamos con detalle. Como especialistas en medicina interna, conectamos los síntomas para llegar a la raíz de tu malestar ofreciendo un plan de acción para que recuperes tu vitalidad.' },
+        { id: 'm2', nombre: 'Cardiólogo', icon: '❤️', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
+        { id: 'm3', nombre: 'Neumonólogo', icon: '🫁', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
+        { id: 'm4', nombre: 'Gastroenterólogo', icon: '🩺', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
+        { id: 'm5', nombre: 'Endocrino', icon: '🦋', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
+        { id: 'm6', nombre: 'Neurólogo', icon: '🧠', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
         { id: 'm7', nombre: 'Oncólogo', icon: '🥼', doctor: 'Dr. Jose Gregorio Hernandez', costo: '$10', img: '/onco.jpg', descripcion: 'Enfrentar un diagnóstico difícil requiere de un equipo médico compasivo y altamente capacitado. Te acompañamos en cada etapa de tu tratamiento oncológico con empatía.' },
       ]
     },
@@ -82,11 +82,11 @@ export default function Home() {
       circleBg: 'bg-[#ebf3f7]',
       circleBorder: 'border-[#c9dfe8]',
       items: [
-        { id: 'q1', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$9', img: '/andres.jpg', descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de solidaridad donde tu salud integral es lo primero.' }, 
-        { id: 'q2', nombre: 'Urólogo', icon: '💧', doctor: 'Dr. Javier Pineda', costo: '$35', img: '/javier.jpg', descripcion: 'Abordamos tu salud íntima con el máximo respeto, absoluta confidencialidad y una gran empatía. Sabemos que dar el paso puede generar dudas o temores, por eso te ofrecemos un espacio seguro.' },
-        { id: 'q3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Ender Pacheco', costo: '$8', img: '/trauma.jpg', descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza.' },
-        { id: 'q4', nombre: 'Oftalmólogo', icon: '👓', doctor: 'Dr. Roberto Gómez', costo: '$30', descripcion: 'Queremos que sigas viendo la belleza del mundo con absoluta claridad. Con total delicadeza, cuidamos tu visión para que no te pierdas ni un solo detalle de los momentos importantes.' },
-        { id: 'q5', nombre: 'Otorrino', icon: '👂', doctor: 'Dra. Patricia León', costo: '$30', descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz.' },
+        { id: 'q1', nombre: 'Ginecología', icon: '🌸', doctor: 'Dr. Andrés González', costo: '$8', img: '/andres.jpg', descripcion: 'Ser mujer es un viaje hermoso, y no tienes que recorrerlo sola. Te brindamos un espacio íntimo, respetuoso y lleno de solidaridad donde tu salud integral es lo primero.' }, 
+        { id: 'q2', nombre: 'Urólogo', icon: '💧', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', img: '/avier.jpg', descripcion: '.' },
+        { id: 'q3', nombre: 'Traumatólogo', icon: '🦴', doctor: 'Dr. Elder Pacheco', costo: '$8', img: '/trauma.jpg', descripcion: 'Cada paso que das es importante para nosotros. Si el dolor o una lesión han detenido tu marcha, nuestro equipo humano te ayudará a levantarte con fuerza.' },
+        { id: 'q4', nombre: 'Oftalmólogo', icon: '👓', doctor: '¿quieres ser uno de nuestros especialistas? contactanos', costo: '$0', descripcion: '.' },
+        { id: 'q5', nombre: 'Otorrino', icon: '👂', doctor: 'Dra. Oriana', costo: '$8', descripcion: 'Tus sentidos te conectan con las personas que amas y el mundo que te rodea. Te brindamos un cuidado excepcional y minucioso para tu audición y tu voz.' },
       ]
     },
     {
@@ -97,9 +97,9 @@ export default function Home() {
       circleBorder: 'border-[#c7d2fe]',
       items: [
         { id: 'd1', nombre: 'Ecografista', icon: '📟', doctor: 'Dr. Marvin Santana', costo: '$9', img: '/eco.jpg', descripcion: 'A través de nuestras imágenes, miramos más allá de lo evidente para cuidar tu salud con precisión milimétrica. Te ofrecemos un trato sumamente cálido durante cada estudio.' },
-        { id: 'd2', nombre: 'Laboratorio Clínico', icon: '🔬', doctor: 'Servicio de Bioanálisis', costo: 'Variable', descripcion: 'Contamos con pruebas de laboratorio precisas y confiables para respaldar tu diagnóstico médico. Resultados rápidos, atención delicada y tecnología al servicio de tu salud.' },
+        { id: 'd2', nombre: 'Laboratorio Clínico', icon: '🔬', doctor: 'Bioanalista Yuneira Sequera',img: '/psic.jpg', costo: 'Variable', descripcion: 'Contamos con pruebas de laboratorio precisas y confiables para respaldar tu diagnóstico médico. Resultados rápidos, atención delicada y tecnología al servicio de tu salud.' },
         { id: 'd3', nombre: 'Psicólogo', icon: '🧩', doctor: 'Lcda. Alexandra Perez', costo: '$8', img: '/psico.jpg', descripcion: 'Cuidar de tu mente es tan importante como cuidar de tu cuerpo. Te ofrecemos un espacio seguro, confidencial y libre de juicios donde podrás sanar y gestionar tus emociones.' },
-        { id: 'd4', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Elsa Perez', costo: '$4', img: '/peuta.jpg', descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones.' },
+        { id: 'd4', nombre: 'Fisioterapeuta', icon: '👐', doctor: 'Lcdo. Elsa Perez', costo: 'Primera vez $5 y terapias continuas $3', img: '/peuta.jpg', descripcion: 'El movimiento es vida, y queremos ayudarte a recuperarlo. Con paciencia y terapias personalizadas, aliviamos tu dolor y rehabilitamos tus lesiones.' },
       ]
     }
   ];
@@ -214,7 +214,7 @@ export default function Home() {
               </div>
             </div>
 
-            <button onClick={() => window.open('https://instagram.com/tu_usuario', '_blank')} className="mt-8 w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+            <button onClick={() => window.open('https://www.instagram.com/funda.caminemosj/', '_blank')} className="mt-8 w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
               Seguir en Instagram
             </button>
           </div>
